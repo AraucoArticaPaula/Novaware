@@ -27,11 +27,11 @@ Permite administrar vendedores, inventario, comisiones y detalle de ventas en un
 Requisitos:
 - JDK 17+
 - NetBeans o VS Code
-- PostgresSQL
+- PostgreSQL
 
 Pasos:
 1. Clonar el repositorio:
    git clone https://github.com/AraucoArticaPaula/Novaware.git
-2. Configurar la base de datos en PostgresSQL
+2. Configurar la base de datos en PostgreSQL
 3. Importar el proyecto en NetBeans
 4. Ejecutar la aplicación desde Home.fxml
