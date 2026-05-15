@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -18,19 +18,24 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.novaware.controllers.ComisionesController">
+<BorderPane style="-fx-background-color: white;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ComisionesController">
 
    <!-- ===== SIDEBAR ===== -->
    <left>
-      <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="270.0" spacing="10.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
-         <padding><Insets top="20.0" /></padding>
+      <VBox prefHeight="720.0" prefWidth="270.0" spacing="10.0" style="-fx-background-color: #000000;" BorderPane.alignment="TOP_CENTER">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
          <children>
-            <ImageView fitHeight="173.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+
+            <ImageView fitHeight="153.0" fitWidth="268.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/LOGO.png" />
                </image>
             </ImageView>
             <Separator prefWidth="200.0" visible="false" />
+
+            <!-- Indicadores -->
             <HBox alignment="CENTER_LEFT" onMouseClicked="#irIndicadores" prefHeight="60.0" prefWidth="270.0" spacing="12.0" style="-fx-cursor: hand;">
                <children>
                   <ImageView fitHeight="53.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
@@ -39,26 +44,26 @@
                      </image>
                   </ImageView>
                   <Label prefHeight="18.0" prefWidth="138.0" text="Indicadores de tienda" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
+                     <font><Font size="14.0" /></font>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#irComisiones" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand; -fx-background-color: #1a1a1a;">
+
+            <!-- Comisiones: ACTIVO -->
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: #1a1a1a; -fx-background-radius: 10;">
                <children>
                   <ImageView fitHeight="52.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/comisiones.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="18.0" prefWidth="138.0" text="Comisiones" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="Comisiones">
+                     <font><Font name="System Bold" size="14.0" /></font>
                   </Label>
                </children>
             </HBox>
+
+            <!-- Vendedores -->
             <HBox alignment="CENTER_LEFT" onMouseClicked="#irVendedores" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;">
                <children>
                   <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
@@ -67,12 +72,12 @@
                      </image>
                   </ImageView>
                   <Label prefHeight="58.0" prefWidth="157.0" text="Asignar nuevo vendedor" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
+                     <font><Font size="14.0" /></font>
                   </Label>
                </children>
             </HBox>
+
+            <!-- Inventario -->
             <HBox alignment="CENTER_LEFT" onMouseClicked="#irInventario" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;">
                <children>
                   <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
@@ -80,36 +85,33 @@
                         <Image url="@../Imagenes/inventario.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="54.0" prefWidth="160.0" text="Inventario de la tienda" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
+                  <Label prefHeight="54.0" prefWidth="153.0" text="Inventario de la tienda" textFill="WHITE">
+                     <font><Font size="14.0" /></font>
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;">
+
+            <!-- Detalle ventas -->
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="270.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Imagenes/factura.png" />
                      </image>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
+                     <HBox.margin><Insets left="30.0" /></HBox.margin>
                   </ImageView>
                   <Label prefHeight="54.0" prefWidth="153.0" text="Detalle ventas" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="32.0" />
-                     </HBox.margin>
+                     <font><Font size="14.0" /></font>
+                     <HBox.margin><Insets left="32.0" /></HBox.margin>
                   </Label>
                </children>
             </HBox>
-            <Region prefHeight="105.0" prefWidth="270.0" />
+
+            <Region prefHeight="105.0" prefWidth="270.0" VBox.vgrow="ALWAYS" />
             <Separator prefWidth="200.0" />
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#cerrarSesion" prefHeight="30.0" prefWidth="270.0" style="-fx-cursor: hand;">
+
+            <!-- Salir -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#cerrarSesion" prefHeight="49.0" prefWidth="270.0" style="-fx-cursor: hand;">
                <children>
                   <Region prefHeight="50.0" prefWidth="89.0" />
                   <ImageView fitHeight="29.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
@@ -118,219 +120,249 @@
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" prefHeight="30.0" prefWidth="74.0" text="Salir" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
+                     <font><Font size="18.0" /></font>
                   </Label>
                </children>
             </HBox>
+
          </children>
       </VBox>
    </left>
 
-   <right>
-      <ScrollBar orientation="VERTICAL" BorderPane.alignment="CENTER" />
-   </right>
-
    <!-- ===== CONTENIDO PRINCIPAL ===== -->
    <center>
-      <VBox prefHeight="720.0" prefWidth="998.0" spacing="20.0" BorderPane.alignment="CENTER">
-         <padding><Insets bottom="10.0" left="15.0" right="10.0" top="10.0" /></padding>
-         <children>
-
-            <!-- Barra usuario -->
-            <HBox alignment="TOP_RIGHT" prefHeight="46.0" spacing="10.0" VBox.vgrow="NEVER">
+      <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefWidth="998.0" spacing="20.0">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="10.0" top="10.0" />
+               </padding>
                <children>
-                  <HBox prefHeight="46.0" prefWidth="196.0">
+
+                  <!-- Barra usuario -->
+                  <HBox alignment="TOP_RIGHT" prefHeight="46.0" spacing="10.0" VBox.vgrow="NEVER">
                      <children>
-                        <Circle fill="DODGERBLUE" radius="17.0" stroke="DODGERBLUE" strokeType="INSIDE" HBox.hgrow="NEVER">
-                           <HBox.margin><Insets left="5.0" top="5.0" /></HBox.margin>
-                        </Circle>
-                        <MenuButton fx:id="menuUsuario" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Usuario">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Mi perfil" />
-                              <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
-                           </items>
-                           <font><Font size="22.0" /></font>
-                        </MenuButton>
+                        <HBox prefHeight="46.0" prefWidth="196.0">
+                           <children>
+                              <Circle fill="DODGERBLUE" radius="17.0" stroke="DODGERBLUE" strokeType="INSIDE" HBox.hgrow="NEVER">
+                                 <HBox.margin><Insets left="5.0" top="5.0" /></HBox.margin>
+                              </Circle>
+                              <MenuButton fx:id="menuUsuario" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Usuario">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Mi perfil" />
+                                    <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                                 </items>
+                                 <font><Font size="22.0" /></font>
+                              </MenuButton>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
-               </children>
-            </HBox>
 
-            <Separator prefWidth="998.0" VBox.vgrow="NEVER">
-               <VBox.margin><Insets top="-15.0" /></VBox.margin>
-            </Separator>
+                  <Separator opacity="0.23" prefWidth="998.0" VBox.vgrow="NEVER">
+                     <VBox.margin><Insets top="-15.0" /></VBox.margin>
+                  </Separator>
 
-            <!-- Título + filtros -->
-            <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="10.0">
-               <children>
-                  <Label text="COMISIONES">
-                     <font><Font name="System Bold" size="31.0" /></font>
-                  </Label>
-                  <Region HBox.hgrow="ALWAYS" />
-                  <VBox alignment="CENTER_RIGHT" spacing="5.0">
+                  <!-- Título + filtros -->
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="980.0" spacing="10.0">
                      <children>
-                        <MenuButton fx:id="menuPeriodo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="236.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Periodo" textFill="WHITE">
+                        <Label text="COMISIONES" style="-fx-text-fill: black;">
+                           <font><Font name="System Bold" size="31.0" /></font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <MenuButton fx:id="menuPeriodo" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Periodo" textFill="WHITE">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Este mes" />
                               <MenuItem mnemonicParsing="false" text="Mes anterior" />
                               <MenuItem mnemonicParsing="false" text="Personalizado" />
                            </items>
-                           <font><Font size="19.0" /></font>
+                           <font><Font size="15.0" /></font>
                         </MenuButton>
-                        <DatePicker fx:id="dpFecha" prefHeight="43.0" prefWidth="238.0" style="-fx-border-color: #444; -fx-background-color: black;" />
+                        <DatePicker fx:id="dpFecha" prefHeight="27.0" prefWidth="200.0" style="-fx-border-color: black;" />
                      </children>
-                  </VBox>
+                  </HBox>
+
+                  <!-- Fila 1 tarjetas: Total comisiones / VTA / GEX -->
+                  <HBox prefHeight="140.0" prefWidth="980.0" spacing="10.0">
+                     <children>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="Total comisiones" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblTotalComisiones" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="en el periodo" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="VTA (5%)" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblVta" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="venta estándar" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="GEX (5%)" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblGex" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="garantía extendida" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                     </children>
+                  </HBox>
+
+                  <!-- Fila 2 tarjetas: LLB / Seleccionados / Combos -->
+                  <HBox prefHeight="140.0" prefWidth="980.0" spacing="10.0">
+                     <children>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="LLB" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblLlb" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="lleva y lleva / bundles" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="Seleccionados (5%)" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblSeleccionados" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="productos seleccionados" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                        <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox spacing="4.0">
+                                 <padding><Insets left="15.0" top="15.0" /></padding>
+                                 <children>
+                                    <Label text="Combos (2.5%)" textFill="#d9d9d9">
+                                       <font><Font size="14.0" /></font>
+                                    </Label>
+                                    <Label fx:id="lblCombos" text="S/ 0.00" textFill="WHITE">
+                                       <font><Font size="34.0" /></font>
+                                    </Label>
+                                    <Label text="venta en combo" textFill="#888888">
+                                       <font><Font size="12.0" /></font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+
+                     </children>
+                  </HBox>
+
+                  <!-- Tabla detalle por vendedor -->
+                  <Label text="Detalle por vendedor" style="-fx-text-fill: black;">
+                     <font><Font name="Inter 24pt Medium" size="20.0" /></font>
+                  </Label>
+
+                  <TableView fx:id="tablaDetalle" prefHeight="260.0" prefWidth="982.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="colVendedor"     prefWidth="150" text="Vendedor" />
+                        <TableColumn fx:id="colTotalComis"   prefWidth="130" text="Total comis." />
+                        <TableColumn fx:id="colVta"          prefWidth="100" text="VTA" />
+                        <TableColumn fx:id="colGex"          prefWidth="100" text="GEX" />
+                        <TableColumn fx:id="colLlbCol"       prefWidth="100" text="LLB" />
+                        <TableColumn fx:id="colSelec"        prefWidth="130" text="Seleccionados" />
+                        <TableColumn fx:id="colCombo"        prefWidth="100" text="Combos" />
+                        <TableColumn fx:id="colVentas"       prefWidth="80"  text="Ventas" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <placeholder>
+                        <Label text="Sin datos para el periodo seleccionado" textFill="#888888" />
+                     </placeholder>
+                  </TableView>
+
+                  <Label text="Tabla de comisiones" style="-fx-text-fill: black;">
+                     <font><Font name="Inter 24pt Medium" size="20.0" /></font>
+                  </Label>
+
+                  <TableView fx:id="tablaComisiones" prefHeight="220.0" prefWidth="982.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="colComisVendedor" prefWidth="150" text="Vendedor" />
+                        <TableColumn fx:id="colComisVenta"    prefWidth="110" text="Num. Venta" />
+                        <TableColumn fx:id="colComisMontoV"   prefWidth="120" text="Monto venta" />
+                        <TableColumn fx:id="colComisTipo"     prefWidth="120" text="Tipo" />
+                        <TableColumn fx:id="colComisPct"      prefWidth="80"  text="Porcentaje" />
+                        <TableColumn fx:id="colComisTotal"    prefWidth="120" text="Comision" />
+                        <TableColumn fx:id="colComisFecha"    prefWidth="140" text="Fecha" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <placeholder>
+                        <Label text="Sin comisiones registradas" textFill="#888888" />
+                     </placeholder>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TableView>
+
                </children>
-            </HBox>
-
-            <!-- Fila 1 de tarjetas -->
-            <HBox prefHeight="140.0" spacing="10.0">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="Total comisiones" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblTotalComisiones" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="142.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="VTA (5%)" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblVta" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="140.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="GEX (5%)" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblGex" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-
-            <!-- Fila 2 de tarjetas -->
-            <HBox prefHeight="140.0" spacing="10.0">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="88.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="LLB" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblLlb" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="Seleccionados (5%)" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblSeleccionados" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="108.0" style="-fx-background-color: black; -fx-background-radius: 20;" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox prefHeight="100.0" prefWidth="193.0" spacing="4.0">
-                           <padding><Insets left="15.0" top="15.0" /></padding>
-                           <children>
-                              <Label text="Combos (2.5%)" textFill="#d9d9d9">
-                                 <font><Font name="Inter 24pt Regular" size="20.0" /></font>
-                              </Label>
-                              <Label fx:id="lblCombos" text="S/0.00" textFill="WHITE">
-                                 <font><Font size="35.0" /></font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-
-            <!-- ===== TABLA 1: Detalle por vendedor ===== -->
-            <Label text="Detalle por vendedor">
-               <font><Font name="Inter 24pt Medium" size="23.0" /></font>
-            </Label>
-            <TableView fx:id="tablaDetalle" prefHeight="150.0" prefWidth="970.0" VBox.vgrow="NEVER">
-               <columns>
-                  <TableColumn fx:id="colVendedor" prefWidth="75.0" text="Vendedor" />
-                  <TableColumn fx:id="colMonto" prefWidth="75.0" text="Monto" />
-                  <TableColumn fx:id="colMeta" prefWidth="75.0" text="Meta" />
-                  <TableColumn fx:id="colPctMeta" prefWidth="75.0" text="%Meta" />
-                  <TableColumn fx:id="colPctGar" prefWidth="75.0" text="%Garantías" />
-                  <TableColumn fx:id="colLlb" prefWidth="75.0" text="LLB" />
-                  <TableColumn fx:id="colVentas" prefWidth="75.0" text="Ventas" />
-               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-               <placeholder>
-                  <Label text="Tabla sin contenido" textFill="#888888" />
-               </placeholder>
-               <VBox.margin><Insets right="10.0" /></VBox.margin>
-            </TableView>
-
-            <!-- ===== TABLA 2: Tabla de comisiones ===== -->
-            <Label text="Tabla de comisiones">
-               <font><Font name="Inter 24pt Medium" size="23.0" /></font>
-            </Label>
-            <TableView fx:id="tablaComisiones" prefHeight="150.0" prefWidth="980.0" VBox.vgrow="NEVER">
-               <columns>
-                  <TableColumn fx:id="colTipo" prefWidth="75.0" text="Tipo" />
-                  <TableColumn fx:id="colCondicion" prefWidth="75.0" text="Condición" />
-                  <TableColumn fx:id="colPct" prefWidth="75.0" text="% comisión" />
-               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-               <placeholder>
-                  <Label text="Tabla sin contenido" textFill="#888888" />
-               </placeholder>
-               <VBox.margin><Insets bottom="10.0" right="10.0" /></VBox.margin>
-            </TableView>
-
-         </children>
-      </VBox>
+            </VBox>
+         </content>
+      </ScrollPane>
    </center>
 
 </BorderPane>

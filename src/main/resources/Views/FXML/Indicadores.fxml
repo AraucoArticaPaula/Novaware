@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.IndicadoresController">
+<BorderPane style="-fx-background-color: white;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.IndicadoresController">
 
    <!-- ===== SIDEBAR ===== -->
    <left>
@@ -43,7 +43,7 @@
                         <Image url="@../Imagenes/indicadores.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="20.0" prefWidth="154.0" text="Indicadores de tienda" textFill="WHITE">
+                  <Label prefHeight="20.0" prefWidth="154.0" text="Indicadores de tienda">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -143,7 +143,7 @@
    <center>
       <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefWidth="998.0" spacing="20.0">
+            <VBox prefWidth="998.0" spacing="20.0" style="-fx-text-fill: black;">
                <padding>
                   <Insets bottom="15.0" left="15.0" right="10.0" top="10.0" />
                </padding>
@@ -182,7 +182,7 @@
                   <!-- Título + filtros -->
                   <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="980.0" spacing="10.0">
                      <children>
-                        <Label text="INDICADORES DE TIENDA" textFill="black">
+                        <Label text="INDICADORES DE TIENDA" style="-fx-text-fill: black;">
                            <font>
                               <Font name="System Bold" size="31.0" />
                            </font>
@@ -264,7 +264,7 @@
                                     <Insets left="15.0" top="15.0" />
                                  </padding>
                                  <children>
-                                    <Label text="%% cumplimiento meta" textFill="#d9d9d9">
+                                    <Label text="Cumplimiento meta" textFill="#d9d9d9">
                                        <font>
                                           <Font name="Inter 24pt Regular" size="14.0" />
                                        </font>
@@ -296,7 +296,7 @@
                                     <Insets left="15.0" top="15.0" />
                                  </padding>
                                  <children>
-                                    <Label text="% ventas garantías" textFill="#d9d9d9">
+                                    <Label text="Ventas garantías" textFill="#d9d9d9">
                                        <font>
                                           <Font name="Inter 24pt Regular" size="14.0" />
                                        </font>
@@ -371,18 +371,18 @@
                   </HBox>
 
                   <!-- Tabla detalle por vendedor -->
-                  <Label text="Detalle por vendedor" textFill="black">
+                  <Label text="Detalle por vendedor" style="-fx-text-fill: black;">
                      <font>
                         <Font name="Inter 24pt Medium" size="20.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tablaIndicadores" prefHeight="220.0" prefWidth="982.0" tableMenuButtonVisible="true">
+                  <TableView fx:id="tablaIndicadores" prefHeight="220.0" prefWidth="982.0" tableMenuButtonVisible="true" >
                      <columns>
                         <TableColumn fx:id="colVendedor" prefWidth="140" text="Vendedor" />
                         <TableColumn fx:id="colMonto" prefWidth="120" text="Monto" />
                         <TableColumn fx:id="colMeta" prefWidth="120" text="Meta" />
-                        <TableColumn fx:id="colPctMeta" prefWidth="100" text="%Meta" />
-                        <TableColumn fx:id="colPctGar" prefWidth="110" text="%Garantías" />
+                        <TableColumn fx:id="colPctMeta" prefWidth="100" text="(%)Meta" />
+                        <TableColumn fx:id="colPctGar" prefWidth="110" text="(%)Garantías" />
                         <TableColumn fx:id="colLlb" prefWidth="80" text="LLB" />
                         <TableColumn fx:id="colVentas" prefWidth="90" text="Ventas" />
                      </columns>
