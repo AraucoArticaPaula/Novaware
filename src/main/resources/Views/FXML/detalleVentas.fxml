@@ -32,7 +32,7 @@
 
             <ImageView fitHeight="173.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                <image>
-                  <Image url="@LOGO.png" />
+                  <Image url="@../Imagenes/LOGO.png" />
                </image>
             </ImageView>
 
@@ -43,7 +43,7 @@
                <children>
                   <ImageView fitHeight="53.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@indicadores.png" />
+                        <Image url="@../Imagenes/indicadores.png" />
                      </image>
                   </ImageView>
 
@@ -60,7 +60,7 @@
                <children>
                   <ImageView fitHeight="52.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@comisiones.png" />
+                        <Image url="@../Imagenes/comisiones.png" />
                      </image>
                   </ImageView>
 
@@ -77,7 +77,7 @@
                <children>
                   <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@vendedores.png" />
+                        <Image url="@../Imagenes/vendedores.png" />
                      </image>
                   </ImageView>
 
@@ -94,7 +94,7 @@
                <children>
                   <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@inventario.png" />
+                        <Image url="@../Imagenes/inventario.png" />
                      </image>
                   </ImageView>
 
@@ -112,7 +112,7 @@
 
                   <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@factura.png" />
+                        <Image url="@../Imagenes/factura.png" />
                      </image>
 
                      <HBox.margin>
@@ -145,7 +145,7 @@
 
                   <ImageView fitHeight="29.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Salida.png" />
+                        <Image url="@../Imagenes/Salida.png" />
                      </image>
                   </ImageView>
 

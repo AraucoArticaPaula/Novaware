@@ -264,7 +264,7 @@
                                     <Insets left="15.0" top="15.0" />
                                  </padding>
                                  <children>
-                                    <Label text="cumplimiento meta" textFill="#d9d9d9">
+                                    <Label text="%% cumplimiento meta" textFill="#d9d9d9">
                                        <font>
                                           <Font name="Inter 24pt Regular" size="14.0" />
                                        </font>
@@ -296,7 +296,7 @@
                                     <Insets left="15.0" top="15.0" />
                                  </padding>
                                  <children>
-                                    <Label text="ventas garantías" textFill="#d9d9d9">
+                                    <Label text="% ventas garantías" textFill="#d9d9d9">
                                        <font>
                                           <Font name="Inter 24pt Regular" size="14.0" />
                                        </font>
@@ -381,8 +381,8 @@
                         <TableColumn fx:id="colVendedor" prefWidth="140" text="Vendedor" />
                         <TableColumn fx:id="colMonto" prefWidth="120" text="Monto" />
                         <TableColumn fx:id="colMeta" prefWidth="120" text="Meta" />
-                        <TableColumn fx:id="colPctMeta" prefWidth="100" text="Meta" />
-                        <TableColumn fx:id="colPctGar" prefWidth="110" text="Garantías" />
+                        <TableColumn fx:id="colPctMeta" prefWidth="100" text="%Meta" />
+                        <TableColumn fx:id="colPctGar" prefWidth="110" text="%Garantías" />
                         <TableColumn fx:id="colLlb" prefWidth="80" text="LLB" />
                         <TableColumn fx:id="colVentas" prefWidth="90" text="Ventas" />
                      </columns>
