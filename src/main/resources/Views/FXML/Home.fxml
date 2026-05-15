@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.HomeController">
+
+   <!-- ===== SIDEBAR ===== -->
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="270.0" spacing="10.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <padding><Insets top="20.0" /></padding>
+         <children>
+            <ImageView fitHeight="147.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="NEVER">
+               <image><Image url="@../Imagenes/LOGO.png" /></image>
+            </ImageView>
+
+            <Separator prefWidth="200.0" visible="false" />
+
+            <!-- Indicadores -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#irIndicadores" prefHeight="60.0" prefWidth="270.0" spacing="12.0" style="-fx-cursor: hand;" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="53.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/indicadores.png" /></image>
+                  </ImageView>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="Indicadores de tienda" textFill="WHITE">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <!-- Comisiones -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#irComisiones" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;">
+               <children>
+                  <ImageView fitHeight="52.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/comisiones.png" /></image>
+                  </ImageView>
+                  <Label prefHeight="18.0" prefWidth="138.0" text="Comisiones" textFill="WHITE">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <!-- Vendedores -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#irVendedores" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/vendedores.png" /></image>
+                  </ImageView>
+                  <Label prefHeight="58.0" prefWidth="157.0" text="Asignar nuevo vendedor" textFill="WHITE">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <!-- Inventario -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#irInventario" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="53.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/inventario.png" /></image>
+                  </ImageView>
+                  <Label prefHeight="54.0" prefWidth="160.0" text="Inventario de la tienda" textFill="WHITE">
+                     <font><Font size="14.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#irDetalleVentas" prefHeight="60.0" prefWidth="270.0" style="-fx-cursor: hand;" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/factura.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="54.0" prefWidth="153.0" text="Detalle ventas" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="32.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+
+            <Region prefHeight="138.0" prefWidth="270.0" VBox.vgrow="ALWAYS" />
+            <Separator prefWidth="200.0" />
+
+            <!-- Salir -->
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#cerrarSesion" prefHeight="49.0" prefWidth="270.0" style="-fx-cursor: hand;">
+               <children>
+                  <Region prefHeight="50.0" prefWidth="89.0" />
+                  <ImageView fitHeight="29.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/Salida.png" /></image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="74.0" text="Salir" textFill="WHITE">
+                     <font><Font size="18.0" /></font>
+                  </Label>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </left>
+
+   <!-- ===== CONTENIDO PRINCIPAL ===== -->
+   <center>
+      <VBox prefHeight="776.0" prefWidth="998.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin><Insets left="20.0" /></BorderPane.margin>
+         <children>
+
+            <!-- Barra superior: usuario -->
+            <HBox alignment="TOP_RIGHT" prefHeight="46.0" prefWidth="998.0" spacing="10.0" VBox.vgrow="NEVER">
+               <VBox.margin><Insets top="10.0" /></VBox.margin>
+               <children>
+                  <HBox prefHeight="46.0" prefWidth="196.0">
+                     <children>
+                        <Circle fill="DODGERBLUE" radius="17.0" stroke="DODGERBLUE" strokeType="INSIDE" HBox.hgrow="NEVER">
+                           <HBox.margin><Insets left="5.0" top="5.0" /></HBox.margin>
+                        </Circle>
+                        <MenuButton fx:id="menuUsuario" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="46.0" prefWidth="137.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Usuario">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Mi perfil" />
+                              <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                           </items>
+                           <font><Font size="22.0" /></font>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+
+            <Separator prefWidth="998.0" VBox.vgrow="NEVER">
+               <VBox.margin><Insets top="-30.0" /></VBox.margin>
+            </Separator>
+
+            <!-- Bienvenida -->
+            <Label prefHeight="50.0" prefWidth="154.0" text="¡Bienvenido!">
+               <VBox.margin><Insets left="20.0" /></VBox.margin>
+               <font><Font size="27.0" /></font>
+            </Label>
+            <Label text="Gestión de tienda">
+               <font><Font size="18.0" /></font>
+               <VBox.margin><Insets left="20.0" top="-30.0" /></VBox.margin>
+            </Label>
+
+            <!-- Banner logo -->
+            <StackPane prefHeight="335.0" prefWidth="982.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="294.0" fitWidth="478.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@../Imagenes/LOGO.png" /></image>
+                  </ImageView>
+               </children>
+               <VBox.margin><Insets right="15.0" /></VBox.margin>
+            </StackPane>
+
+            <!-- Tarjetas resumen -->
+            <HBox alignment="CENTER" prefHeight="118.0" prefWidth="982.0" spacing="15.0" style="-fx-background-color: transparent;">
+               <VBox.margin><Insets right="15.0" /></VBox.margin>
+               <children>
+
+                  <!-- Gerente de tienda -->
+                  <HBox prefHeight="90.0" prefWidth="333.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@../Imagenes/1.png" /></image>
+                           <HBox.margin><Insets left="20.0" top="14.0" /></HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="118.0" prefWidth="245.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="10.0" prefWidth="232.0" text="Gerente de tienda" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                                 <VBox.margin><Insets top="20.0" /></VBox.margin>
+                              </Label>
+                              <Label fx:id="lblGerenteTienda" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="232.0" text="gerente_tienda" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Subgerente -->
+                  <HBox prefHeight="90.0" prefWidth="333.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@../Imagenes/1.png" /></image>
+                           <HBox.margin><Insets left="20.0" top="14.0" /></HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="118.0" prefWidth="245.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="10.0" prefWidth="232.0" text="Subgerente de tienda" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                                 <VBox.margin><Insets top="20.0" /></VBox.margin>
+                              </Label>
+                              <Label fx:id="lblSubgerente" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="232.0" text="subgerente_tienda" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Total vendedores -->
+                  <HBox prefHeight="90.0" prefWidth="333.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image><Image url="@../Imagenes/GRUPO.png" /></image>
+                           <HBox.margin><Insets left="20.0" top="14.0" /></HBox.margin>
+                        </ImageView>
+                        <VBox prefHeight="118.0" prefWidth="245.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="10.0" prefWidth="232.0" text="Vendedores en tienda" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                                 <VBox.margin><Insets top="20.0" /></VBox.margin>
+                              </Label>
+                              <!-- fx:id para actualizar dinámicamente desde el controller -->
+                              <Label fx:id="lblTotalVendedores" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="232.0" text="0" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="NEVER">
+                                 <font><Font size="20.0" /></font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

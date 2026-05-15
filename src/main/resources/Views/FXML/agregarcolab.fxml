@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.novaware.controllers.AgregarColaboradorController"
+      prefWidth="380"
+      prefHeight="460"
+      spacing="8"
+      style="-fx-background-color: white; -fx-padding: 25;">
+
+    <!-- Título -->
+    <Label text="Agregar colaborador"
+           style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #1a1a2e;"/>
+
+    <Label text="Completa los datos del nuevo vendedor"
+           style="-fx-font-size: 12; -fx-text-fill: #888888;"/>
+
+    <Separator style="-fx-padding: 4 0;"/>
+
+    <!-- Nombre -->
+    <Label text="Nombre completo"
+           style="-fx-font-size: 12; -fx-text-fill: #555555; -fx-font-weight: bold;"/>
+    <TextField fx:id="txtNombre"
+               promptText="Ej: Juan Pérez"
+               style="-fx-background-radius: 8; -fx-border-radius: 8;
+                      -fx-border-color: #cccccc; -fx-padding: 8 10; -fx-font-size: 13;"
+               maxWidth="Infinity"/>
+
+    <!-- DNI -->
+    <Label text="DNI"
+           style="-fx-font-size: 12; -fx-text-fill: #555555; -fx-font-weight: bold;"/>
+    <TextField fx:id="txtDni"
+               promptText="Ej: 12345678"
+               style="-fx-background-radius: 8; -fx-border-radius: 8;
+                      -fx-border-color: #cccccc; -fx-padding: 8 10; -fx-font-size: 13;"
+               maxWidth="Infinity"/>
+
+    <!-- Fecha de ingreso -->
+    <Label text="Fecha de ingreso"
+           style="-fx-font-size: 12; -fx-text-fill: #555555; -fx-font-weight: bold;"/>
+    <DatePicker fx:id="dpIngreso"
+                promptText="dd/mm/aaaa"
+                style="-fx-background-radius: 8; -fx-border-radius: 8;
+                       -fx-border-color: #cccccc; -fx-font-size: 13;"
+                maxWidth="Infinity"/>
+
+    <!-- Meta mensual -->
+    <Label text="Meta mensual (S/)"
+           style="-fx-font-size: 12; -fx-text-fill: #555555; -fx-font-weight: bold;"/>
+    <TextField fx:id="txtMeta"
+               promptText="Ej: 15000"
+               style="-fx-background-radius: 8; -fx-border-radius: 8;
+                      -fx-border-color: #cccccc; -fx-padding: 8 10; -fx-font-size: 13;"
+               maxWidth="Infinity"/>
+
+    <!-- Mensaje de error -->
+    <Label fx:id="lblError"
+           text=""
+           style="-fx-text-fill: #A32D2D; -fx-font-size: 12;"
+           visible="false"
+           managed="false"/>
+
+    <VBox VBox.vgrow="ALWAYS"/>
+
+    <!-- Botones -->
+    <HBox spacing="10">
+        <Button text="Cancelar"
+                onAction="#cancelar"
+                style="-fx-background-color: transparent; -fx-border-color: #cccccc;
+                       -fx-border-radius: 8; -fx-background-radius: 8;
+                       -fx-font-size: 13; -fx-padding: 8 20; -fx-cursor: hand;"
+                HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+        <Button text="Guardar"
+                onAction="#guardar"
+                style="-fx-background-color: #185FA5; -fx-text-fill: white;
+                       -fx-border-radius: 8; -fx-background-radius: 8;
+                       -fx-font-size: 13; -fx-font-weight: bold;
+                       -fx-padding: 8 20; -fx-cursor: hand;"
+                HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    </HBox>
+
+</VBox>
